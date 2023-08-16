@@ -5,7 +5,7 @@ Originally authored by Nate Campbell and later modified by Kim Vertacnik and Zak
 
 ### Bug Fixes and Modifications
 1) <i>GTseq_Genotyper_v5.pl</i> now allows for multiple snps for amplicons. At present, each SNP is called independently and phased haplotypes are not provided.
-2) Typo resulting in asymetrical, allelic ratio, heterozygote calling has been corrected.
+2) A typo resulting in asymetrical heterozygote calling based on the ratio of allelic counts has been corrected.
 3) An additional column, termed a "probeSeq flag", has been added to probeSeq files. These flags allow for accurate counting of on-target reads in <i>GTseq_GenoCompile_v5.1.pl</i> and to omit certain loci from genotyping success \(%GT\) filters. If the probeSeq flag is omitted from file, all loci assume a value of 1.
 
 |ProbeSeq Flag|Explanation|
