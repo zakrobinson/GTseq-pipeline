@@ -16,7 +16,7 @@ Originally authored by Nate Campbell and later modified by Kim Vertacnik and Zak
 |3|Flagship SNP of amplicon. Not subject to %GT filter|
 |4|Secondary SNP. Not subject to %GT filter|
 
-## Example Usage On A Linux System
+## Example Usage On A Linux System: A Chinook Salmon GT-seq Library
 ### Notes on generating a raw FASTQ file:
 <i>GTseq_Demultiplex.py</i> operates on a non-demultiplexed FASTQ file from an Illumina sequencing run.\
 The provided, example file <i>Undetermined_S0_R1_001.fastq.gz</i> was generated using the following command using a generic sample sheet:
@@ -51,7 +51,10 @@ ls | grep fastq | while read -r LINE; do
 genos_out=$(echo $LINE | sed -e s/fastq.gz/genos/g);
 echo "../../GTseq_Genotyper_v5.pl ../OtsGTseqV9.2_363-probeSeqs.csv $LINE > $genos_out" >> GenotypeCommands.cmds;
 done  
-parallel -j 3 < GenotypeCommands.cmds > Genotyper.log 2>&1 
+parallel -j 3 < GenotypeCommands.cmds > Genotyper.log 2>&1
+
+# Execute sex marker script in directory with FASTQ and .genos files
+OtsSEX_v3.pl --jobs=3 
 
 ```
 
