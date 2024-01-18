@@ -54,7 +54,7 @@ done
 parallel -j 3 < GenotypeCommands.cmds > Genotyper.log 2>&1
 
 # Execute sex marker script in directory with FASTQ and .genos files
-OtsSEX_v3.pl --jobs=3 
+OtsSEX_v3.1.pl --jobs=3 --ctrl_ratio=0.005
 
 ```
 
