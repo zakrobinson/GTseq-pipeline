@@ -23,12 +23,12 @@ The provided, example file <i>Undetermined_S0_R1_001.fastq.gz</i> was generated 
 
 bcl-convert --output-directory \<PATH\> --force --bcl-input-directory \<PATH-TO-RUN\> --sample-sheet SampleSheetV2_GTseq.csv --strict-mode true --no-lane-splitting true
 
-### Using <i>GTseq_Demultiplex.py</i> 
+### Using <i>GTseq_Demultiplex_V1.1.py</i> 
 
 Using the provided example:
 ```
 cd ExampleData
-../GTseq_Demultiplex.py --barcodeFile NS2K_85-bc.csv --fastq Undetermined_S0_R1_001.fastq.gz --i5rc Y --seqType GTseq --gzipOutput N
+../GTseq_Demultiplex_V1.1.py --barcodeFile NS2K_85-bc.csv --fastq Undetermined_S0_R1_001.fastq.gz --i5rc Y --seqType GTseq --gzipOutput N
 ```
 This should result in three fastq files i202_03_TOSS2145_Ots_Harvest1.fastq, i202_09_TOSS2145_Ots_Harvest2.fastq, and i211_21_TOSS2154_Ots_Harvest3.fastq
 
