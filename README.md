@@ -52,9 +52,11 @@ genos_out=$(echo $LINE | sed -e s/fastq.gz/genos/g);
 echo "../../GTseq_Genotyper_v5.pl ../OtsGTseqV9.2_363-probeSeqs.csv $LINE > $genos_out" >> GenotypeCommands.cmds;
 done  
 parallel -j 3 < GenotypeCommands.cmds > Genotyper.log 2>&1
+# or try in series.
+# sh GenotypeCommands.cmds
 
 # Execute sex marker script in directory with FASTQ and .genos files
-OtsSEX_v3.1.pl --jobs=3 --ctrl_ratio=0.005
+../../OtsSEX_v3.1.pl --jobs=3 --ctrl_ratio=0.005
 
 ```
 
